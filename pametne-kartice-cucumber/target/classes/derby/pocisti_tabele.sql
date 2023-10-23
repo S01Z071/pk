@@ -1,0 +1,17 @@
+delete from CERTIFIKATI;
+delete from KARTICA;
+delete from STATUS_LOG_PRENOS;
+delete from IMETNIK;
+delete from OPOMBA;
+delete from STATUS_LOG;
+delete from STATUS_LOG_IMETNIK;
+delete from STATUS_LOG_PREKLIC;
+delete from STATUS_LOG_ZAHTEVEK_ZA_KODO;
+delete from ZAHTEVEK;
+delete from ZAHTEVEK_TEMP;
+delete from ZAHTEVEK_ZA_KODO;
+delete from ZAHTEVEK_ZA_PREKLIC;
+delete from ZAHTEVEK_ZA_PRENOS;
+delete from JOBLOG;
+delete from SEZNAM_CITALCEV_SIGOVCA;
+delete from SEZNAM_KARTIC_SIGOVCA;

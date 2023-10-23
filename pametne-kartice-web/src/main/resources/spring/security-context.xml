@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+    <!--
+     <global-method-security pre-post-annotations="enabled" proxy-target-class="true"/>
+    -->
+   
+    <http auto-config="true" use-expressions="true" >
+        <intercept-url pattern="/login" access="permitAll"/>        
+        <intercept-url pattern="/index" access="hasAnyRole('001', '002', '003', '004', '005', '006')"/>
+        <intercept-url pattern="/loginIzbira/**" access="isAuthenticated()"/>
+        <intercept-url pattern="/loginIzbira*" access="isAuthenticated()"/> 
+        <intercept-url pattern="/" access="isAuthenticated()"/> 
+         
+        <intercept-url pattern="/izpisPodatkov/*/*/*" access="hasRole('001')"/> 
+        <intercept-url pattern="/izpisPodrobno/*" access="hasAnyRole('001', '002', '005', '006')"/>  
+        <intercept-url pattern="/indexRedirect/*" access="hasAnyRole('001', '002', '005', '006')"/> 
+        <intercept-url pattern="/Vloga/dodajOpombo/**" access="hasAnyRole('001', '002', '005', '006')"/> 
+        <intercept-url pattern="/Vloga/dodaj" access="hasAnyRole('001', '002')"/>          
+        <intercept-url pattern="/Vloga/imetnik/dodaj/**" access="hasAnyRole('001', '002')"/> 
+        <intercept-url pattern="/Vloga/brisiImetnik/**" access="hasAnyRole('001', '002')"/>           
+        <intercept-url pattern="/Vloga/**" access="hasAnyRole('001', '002', '006')"/>      
+        <intercept-url pattern="/Vloga/imetnik/uredi/**" access="hasAnyRole('001', '002', '006')"/>  
+        <intercept-url pattern="/Vloga/imetnik/process/**" access="hasAnyRole('001', '002', '006')"/>         
+        <intercept-url pattern="/brisiVlogo/**" access="hasAnyRole('001', '002')"/>  
+        <intercept-url pattern="/potrdiVlogo/**" access="hasAnyRole('001', '002')"/>  
+        <intercept-url pattern="/printZahtevek/**" access="hasAnyRole('001', '002', '006')"/>  
+        <intercept-url pattern="/odkleniZahtevek/**" access="hasAnyRole('001', '002', '005')"/> 
+        <intercept-url pattern="/posredujZahtevek/**" access="hasAnyRole('001', '002')"/>   
+        <intercept-url pattern="/vnosCertfObstj/**" access="hasRole('002')"/>  
+        <intercept-url pattern="/vnosKartObstj/**" access="hasRole('002')"/>  
+        <intercept-url pattern="/vnosCitalcevObstj/**" access="hasRole('002')"/> 
+        <intercept-url pattern="/vnosKart/**" access="hasAnyRole('002','004')"/>  
+        <intercept-url pattern="/vnosCertf/**" access="hasAnyRole('002','004')"/>  
+        <intercept-url pattern="/poveziCertfImetnik/**" access="hasAnyRole('002','004')"/> 
+        <intercept-url pattern="/certfPrevzem/**" access="hasAnyRole('002','004')"/>  
+        <intercept-url pattern="/pregledPripKartic/**" access="hasAnyRole('002','003')"/> 
+        <intercept-url pattern="/iskPripKartic/**" access="hasAnyRole('002','003')"/> 
+        <intercept-url pattern="/potrdiloPrejeto/**" access="hasAnyRole('002','003')"/> 
+        <intercept-url pattern="/potrdiloPrejetoPregled/**" access="hasAnyRole('002','003')"/> 
+        <intercept-url pattern="/pregledCertf/**" access="hasAnyRole('001','002','005','006')"/> 
+        <intercept-url pattern="/AdminIskanjeCertf/**" access="hasAnyRole('002','005','006')"/>  
+        <intercept-url pattern="/pregledKarticSigovca/**" access="hasAnyRole('001','002','005','006')"/> 
+        <intercept-url pattern="/AdminIskanjeKartSig/**" access="hasAnyRole('002','005','006')"/> 
+        <intercept-url pattern="/pregledCitalcevSigovca/**" access="hasAnyRole('001','002','005','006')"/> 
+        <intercept-url pattern="/AdminIskanjeCitSig/**" access="hasAnyRole('002','005','006')"/>    
+        <intercept-url pattern="/pregledImetnikov/**" access="hasAnyRole('001','002','005','006')"/> 
+        <intercept-url pattern="/pregledImetnikovPodrobno/**" access="hasAnyRole('001','002','005','006')"/> 
+        <intercept-url pattern="/pregledImetnikovAdmin/**" access="hasAnyRole('002','005','006')"/>   
+        <intercept-url pattern="/printImetnike/**" access="hasAnyRole('001','002','006')"/> 
+        <intercept-url pattern="/iskanje/**" access="hasAnyRole('002','006')"/>  
+        <intercept-url pattern="/iskanjeCK" access="hasAnyRole('002','006')"/>               
+        <intercept-url pattern="/AdminConfirmIskanje/*/*" access="hasAnyRole('002','005','006')"/>   
+        <intercept-url pattern="/izpisPodatkovAdmin/**" access="hasAnyRole('002','005','006')"/>   
+        <intercept-url pattern="/iskanjeP" access="hasAnyRole('002','006')"/>          
+        <intercept-url pattern="/zavrniZahtevek/**" access="hasAnyRole('002','006')"/>  
+        <intercept-url pattern="/potrdiZahtevek/**" access="hasAnyRole('002','006')"/>  
+        <intercept-url pattern="/PotrdiImetnik/**" access="hasAnyRole('002','006')"/> 
+        <intercept-url pattern="/ZavrniImetnik/**" access="hasAnyRole('002','006')"/>  
+        <intercept-url pattern="/izvozVse/**" access="hasAnyRole('002','006')"/>  
+        <intercept-url pattern="/izvozZahtevekVse/**" access="hasAnyRole('002','006')"/>  
+        <intercept-url pattern="/izvozImetnik/**" access="hasAnyRole('002','006')"/>  
+        <intercept-url pattern="/posredovanoNaSigovCA/**" access="hasAnyRole('002','006')"/>  
+        <intercept-url pattern="/posredovanoNaSigovCAVse/**" access="hasAnyRole('002','006')"/>  
+        <intercept-url pattern="/posredovanjeNaSIG/**" access="hasAnyRole('002','006')"/>  
+        <intercept-url pattern="/posredovanoNaSIG/**" access="hasAnyRole('002','006')"/>    
+        <intercept-url pattern="/pregledZgodovine/**" access="hasAnyRole('001','002','005','006')"/>  
+        <intercept-url pattern="/printObvestilo/**" access="hasAnyRole('002','003')"/>  
+        <intercept-url pattern="/odpremljena/**" access="hasAnyRole('002','003')"/>    
+        <intercept-url pattern="/odpremljenaIskanje/**" access="hasAnyRole('002','003')"/>         
+        <intercept-url pattern="/vracanjeKartCit/**" access="hasAnyRole('002','006')"/>   
+        <intercept-url pattern="/pregledStatistike/**" access="hasRole('002')"/>  
+        <intercept-url pattern="/izvozPodatkovKartice/**" access="hasRole('002')"/>  
+        <intercept-url pattern="/pregledKarticVSRS/**" access="hasRole('002')"/>          
+        <intercept-url pattern="/PotrdiSamoImetnik/**" access="hasAnyRole('002','006')"/> 
+        <intercept-url pattern="/ZavrniSamoImetnik/**" access="hasAnyRole('002','006')"/>       
+        <intercept-url pattern="/updateCertificateJob/**" access="hasRole('002')"/>   
+        <intercept-url pattern="/ZahtevekZaKodo" access="hasAnyRole('001', '002')"/>    
+        <intercept-url pattern="/ZahtevekZaKodo/**" access="hasAnyRole('001', '002')"/>        
+        <intercept-url pattern="/dodelovanje/**" access="hasRole('002')"/>   
+        <intercept-url pattern="/AdminConfirmIskanjeImetnik/**" access="hasRole('002')"/> 
+        <!--NOVI -->
+        <intercept-url pattern="/getZadnjaSprememba/**" access="hasAnyRole('001','002','005','006')"/> 
+        <intercept-url pattern="/getZadnjaSpremembaImetnik/**" access="hasAnyRole('001','002','005','006')"/> 
+        <intercept-url pattern="/ZahtevekZaPreklic" access="hasAnyRole('001', '002')"/>    
+        <intercept-url pattern="/ZahtevekZaPreklic/**" access="hasAnyRole('001', '002')"/>  
+        <intercept-url pattern="/ZahtevekZaPrenos" access="hasAnyRole('001', '002')"/>    
+        <intercept-url pattern="/ZahtevekZaPrenos/**" access="hasAnyRole('001', '002')"/>   
+        <intercept-url pattern="/IzpisPodatkovPreklic/*" access="hasAnyRole('001', '002')"/>    
+        <intercept-url pattern="/izpisPodatkovPrenos/*" access="hasAnyRole('001', '002')"/>    
+        <intercept-url pattern="/zgodovina/**" access="hasRole('002')"/>          
+        <!-- <intercept-url pattern="/ZahtevekZaPreklic" access="hasAnyRole('001', '002')"/>  
+        <intercept-url pattern="/ZahtevekZaPreklic/zgodovina/*" access="hasAnyRole('001', '002')"/>  
+        <intercept-url pattern="/ZahtevekZaPreklic/brisi/*" access="hasAnyRole('001', '002')"/>  
+        <intercept-url pattern="/ZahtevekZaPreklic/posredujCIF/*" access="hasAnyRole('001', '002')"/>  
+        <intercept-url pattern="/ZahtevekZaPreklic/podrobno/*" access="hasAnyRole('001', '002')"/>  
+         <intercept-url pattern="/ZahtevekZaPreklic/iskanje" access="hasAnyRole('001', '002')"/>  
+        <intercept-url pattern="/ZahtevekZaPreklic/iskanje/*" access="hasAnyRole('001', '002')"/>  
+         <intercept-url pattern="/ZahtevekZaPreklic/dodaj/*" access="hasAnyRole('001', '002')"/>  
+        <intercept-url pattern="/ZahtevekZaPreklic/**" access="hasRole('002')"/>            
+        <intercept-url pattern="/IzpisPodatkovPreklic/*" access="hasAnyRole('001', '002')"/>    
+        -->
+        
+        <intercept-url pattern="/resources/**" access="permitAll"/>
+        <intercept-url pattern="/**" access="denyAll()"/>   
+         
+        
+        
+        <form-login 
+            login-processing-url="/j_spring_security_check" 
+            login-page="/login" 
+            default-target-url="/login"
+            always-use-default-target="true"
+            authentication-failure-url="/login?login_error=t"/>
+        <http-basic/>
+        <logout logout-url="/j_spring_security_logout" logout-success-url="/login"/>
+       
+    </http>
+    
+
+    
+</beans:beans>

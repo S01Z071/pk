@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>    
+    <definition name="base.definition" template="/WEB-INF/jsp/skupno/layout.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/jsp/skupno/header.jsp" />
+        <put-attribute name="menu" value="/WEB-INF/jsp/skupno/menu.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/jsp/skupno/footer.jsp" />
+    </definition>    
+    
+    <definition name="index" extends="base.definition">
+        <put-attribute name="title" value="Index" />
+        <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+    </definition>     
+    
+    <definition name="izpisPodatkov" extends="base.definition">
+        <put-attribute name="title" value="Izpis" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_certifikat/izpisPodatkov.jsp" />
+    </definition>
+    
+    <definition name="izpisPodatkovPreklic" extends="base.definition">
+        <put-attribute name="title" value="Izpis" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_preklic/izpisPodatkovPreklic.jsp" />
+    </definition>  
+    
+    <definition name="izpisPodatkovPrenos" extends="base.definition">
+        <put-attribute name="title" value="Izpis" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_prenos/izpisPodatkovPrenos.jsp" />
+    </definition>       
+                
+    
+    <definition name="dodajZahtevek" extends="base.definition">
+        <put-attribute name="title" value="Dodajanje" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_certifikat/dodajZahtevek.jsp" />
+    </definition>     
+          
+    <definition name="dodajImetnik" extends="base.definition">
+        <put-attribute name="title" value="Dodajanje imetnika" />
+        <put-attribute name="body" value="/WEB-INF/jsp/imetnik/dodajImetnik.jsp" />
+    </definition> 
+    
+    <definition name="/login" extends="base.definition">
+        <put-attribute name="title" value="Prijava" />
+        <put-attribute name="body" value="/WEB-INF/jsp/prijava/login.jsp" />
+    </definition>
+    
+    <definition name="loginIzbira" extends="base.definition">
+        <put-attribute name="title" value="Izbira" />
+        <put-attribute name="body" value="/WEB-INF/jsp/prijava/loginIzbira.jsp" />
+    </definition>
+    
+    <definition name="/logout" extends="base.definition">
+        <put-attribute name="title" value="Odjava" />
+        <put-attribute name="body" value="/WEB-INF/jsp/prijava/login.jsp" />
+    </definition>
+    
+    <definition name="dodajOpombo" extends="base.definition">
+        <put-attribute name="title" value="Dodajanje opombe" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_certifikat/dodajOpombo.jsp" />
+    </definition>
+       
+    <definition name="izpisPodrobno" extends="base.definition">
+        <put-attribute name="title" value="Podrobno" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_certifikat/izpisPodrobno.jsp" />
+    </definition>   
+    
+    <definition name="iskanje" extends="base.definition">
+        <put-attribute name="title" value="Iskanje" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin_pages/iskanje.jsp" />
+    </definition>      
+    
+    <definition name="pregledLog" extends="base.definition">
+        <put-attribute name="title" value="Zgodovina" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_certifikat/pregledLog.jsp" />
+    </definition>  
+    <definition name="vnosKartice" extends="base.definition">
+        <put-attribute name="title" value="Vnos kartice" />
+        <put-attribute name="body" value="/WEB-INF/jsp/prevzem_certifikata/vnosKartice.jsp" />
+    </definition>  
+      
+    <definition name="vnosCertifikata" extends="base.definition">
+        <put-attribute name="title" value="Vnos certifikata" />
+        <put-attribute name="body" value="/WEB-INF/jsp/prevzem_certifikata/vnosCertifikata.jsp" />
+    </definition>      
+    
+    <definition name="pregledImetnikov" extends="base.definition">
+        <put-attribute name="title" value="Pregled imetnikov" />
+        <put-attribute name="body" value="/WEB-INF/jsp/imetnik/pregledImetnikov.jsp" />
+    </definition>    
+    <definition name="pregledImetnikovPodrobno" extends="base.definition">
+        <put-attribute name="title" value="Podroben pregled imetnika" />
+        <put-attribute name="body" value="/WEB-INF/jsp/imetnik/pregledImetnikovPodrobno.jsp" />
+    </definition>   
+    
+    <definition name="izpisPodrobnoPreklic" extends="base.definition">
+        <put-attribute name="title" value="Podrobno" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_preklic/izpisPodrobnoPreklic.jsp" />
+    </definition>   
+    
+    <definition name="izpisPodrobnoPrenos" extends="base.definition">
+        <put-attribute name="title" value="Podrobno" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_prenos/izpisPodrobnoPrenos.jsp" />
+    </definition>   
+    
+    <definition name="vnosCertifikataObstj" extends="base.definition">
+        <put-attribute name="title" value="Uvoz obstoječih certifikatov" />
+        <put-attribute name="body" value="/WEB-INF/jsp/uvoz_podatkov/vnosCertifikataObstj.jsp" />
+    </definition>  
+    
+    <definition name="certfPrevzem" extends="base.definition">
+        <put-attribute name="title" value="Certifikati za prevzem" />
+        <put-attribute name="body" value="/WEB-INF/jsp/prevzem_certifikata/certfPrevzem.jsp" />
+    </definition>  
+    
+    <definition name="pregledPripKartic" extends="base.definition">
+        <put-attribute name="title" value="Pregled pripravljenih kartic" />
+        <put-attribute name="body" value="/WEB-INF/jsp/odprem_kartic/pregledPripKartic.jsp" />
+    </definition>  
+    <definition name="pregledCertf" extends="base.definition">
+        <put-attribute name="title" value="Pregled certifikatov" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pregled_opreme/pregledCertf.jsp" />
+    </definition> 
+    <definition name="vnosKartObstj" extends="base.definition">
+        <put-attribute name="title" value="Uvoz obstoječih kartic" />
+        <put-attribute name="body" value="/WEB-INF/jsp/uvoz_podatkov/vnosKartObstj.jsp" />
+    </definition>  
+    
+    <definition name="iskPripKartic" extends="base.definition">
+        <put-attribute name="title" value="Iskanje pripravljenih kartic" />
+        <put-attribute name="body" value="/WEB-INF/jsp/odprem_kartic/iskPripKartic.jsp" />
+    </definition>
+    <definition name="potrdiloPrejeto" extends="base.definition">
+        <put-attribute name="title" value="Prejeta potrdila o prejeti kartici" />
+        <put-attribute name="body" value="/WEB-INF/jsp/potrdilo_prevzema/potrdiloPrejeto.jsp" />
+    </definition>
+    
+    <definition name="vnosCitalcevObstj" extends="base.definition">
+        <put-attribute name="title" value="Uvoz obstoječih čitalcev" />
+        <put-attribute name="body" value="/WEB-INF/jsp/uvoz_podatkov/vnosCitalcevObstj.jsp" />
+    </definition>  
+    <definition name="pregledKarticSigovca" extends="base.definition">
+        <put-attribute name="title" value="Pregled kartic" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pregled_opreme/pregledKarticSigovca.jsp" />
+    </definition> 
+    <definition name="pregledCitalcevSigovca" extends="base.definition">
+        <put-attribute name="title" value="Pregled čitalcev" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pregled_opreme/pregledCitalcevSigovca.jsp" />
+    </definition>     
+    <definition name="potrdiloPrejetoPregled" extends="base.definition">
+        <put-attribute name="title" value="Pregled prejetih potrdil" />
+        <put-attribute name="body" value="/WEB-INF/jsp/potrdilo_prevzema/potrdiloPrejetoPregled.jsp" />
+    </definition> 
+    <definition name="posredovanjeNaSIG" extends="base.definition">
+        <put-attribute name="title" value="Posredovanje na SIGOV-CA" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_certifikat/posredovanjeNaSIG.jsp" />
+    </definition> 
+    <definition name="vracanjeKartCit" extends="base.definition">
+        <put-attribute name="title" value="Vrnjene kartice in čitalci" />
+        <put-attribute name="body" value="/WEB-INF/jsp/vracanje_opreme/vracanjeKartCit.jsp" />
+    </definition>     
+    <definition name="pregledStatistike" extends="base.definition">
+        <put-attribute name="title" value="Statistika" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin_pages/pregledStatistike.jsp" />
+    </definition>    
+    <definition name="izvozPodatkovKartice" extends="base.definition">
+        <put-attribute name="title" value="Izvoz podatkov o karticah" />
+        <put-attribute name="body" value="/WEB-INF/jsp/admin_pages/izvozPodatkovKartice.jsp" />
+    </definition>      
+    <definition name="pregledKarticVSRS" extends="base.definition">
+        <put-attribute name="title" value="Pregled kartic VSRS" />
+        <put-attribute name="body" value="/WEB-INF/jsp/pregled_opreme/pregledKarticVSRS.jsp" />
+    </definition>  
+    <definition name="updateCertificateJob" extends="base.definition">
+        <put-attribute name="title" value="Posodobitev preklicanih certifikatov" />
+        <put-attribute name="body" value="/WEB-INF/jsp/batch_job/updateCertificateJob.jsp" />
+    </definition>  
+  
+    <definition name="dodajZahtevekZaKodo" extends="base.definition">
+        <put-attribute name="title" value="Dodajanje zahtevka za pridobitev kode za odklepanje pametne kartice" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_kodo/dodajZahtevekZaKodo.jsp" />
+    </definition>   
+    
+    <definition name="dodajZahtevekZaPreklic" extends="base.definition">
+        <put-attribute name="title" value="Dodajanje zahtevka za preklic digitalnega potrdila" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_preklic/dodajZahtevekZaPreklic.jsp" />
+    </definition>  
+    
+    <definition name="dodajZahtevekZaPrenos" extends="base.definition">
+        <put-attribute name="title" value="Dodajanje zahtevka za prenos digitalnega potrdila" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_prenos/dodajZahtevekZaPrenos.jsp" />
+    </definition>  
+    
+    <definition name="izpisPodrobnoKoda" extends="base.definition">
+        <put-attribute name="title" value="Podrobno" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_kodo/izpisPodrobnoKoda.jsp" />
+    </definition>   
+    
+    <definition name="pregledLogZaKodo" extends="base.definition">
+        <put-attribute name="title" value="Zgodovina" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_kodo/pregledLogZaKodo.jsp" />
+    </definition>   
+    <definition name="pregledLogZaPreklic" extends="base.definition">
+        <put-attribute name="title" value="Zgodovina" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_preklic/pregledLogZaPreklic.jsp" />
+    </definition>   
+    
+      <definition name="pregledLogZaPrenos" extends="base.definition">
+        <put-attribute name="title" value="Zgodovina" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zahtevek_za_prenos/pregledLogZaPrenos.jsp" />
+    </definition>  
+    
+    <definition name="dodeliCitalec" extends="base.definition">
+        <put-attribute name="title" value="Dodeljevanje čitalcev" />
+        <put-attribute name="body" value="/WEB-INF/jsp/dodeljevanje_opreme/dodeliCitalec.jsp" />
+    </definition>    
+       
+    <definition name="zgodovinaImetnik" extends="base.definition">
+        <put-attribute name="title" value="Zgodovina imetnikov" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zgodovina/zgodovinaImetnik.jsp" />
+    </definition>   
+       
+    <definition name="zgodovinaKartica" extends="base.definition">
+        <put-attribute name="title" value="Zgodovina kartic" />
+        <put-attribute name="body" value="/WEB-INF/jsp/zgodovina/zgodovinaKartica.jsp" />
+    </definition>   
+       
+      
+
+</tiles-definitions>

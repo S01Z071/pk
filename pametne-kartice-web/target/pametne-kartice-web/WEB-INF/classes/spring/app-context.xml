@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:flow="http://www.springframework.org/schema/webflow-config"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:jms="http://www.springframework.org/schema/jms"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xmlns:osgi="http://www.springframework.org/schema/osgi"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:security="http://www.springframework.org/schema/security"
+        xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+          http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+          http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+          http://www.springframework.org/schema/webflow-config http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd
+          http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.1.xsd
+          http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.1.xsd
+          http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-3.1.xsd
+          http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi-1.2.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd http://www.springframework.org/schema/mvc
+          http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+          http://www.springframework.org/schema/security
+          http://www.springframework.org/schema/security/spring-security-3.1.xsd
+          http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd"
+       xmlns:mvc="http://www.springframework.org/schema/mvc">
+    
+   
+    <!--context:property-placeholder location="file:///${jboss.server.config.dir}/app/ezkpopravki/application.properties"/-->
+
+    <mvc:annotation-driven />
+   
+   
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="1000000"/>
+    </bean>
+  
+    
+    <bean id="nastavitveHelper" class="si.vsrs.cif.helper.NastavitveHelper">
+        <property name="csvVrednostGlava" value="${si.vsrs.cif.pametnekartice.csv.glava.vred}"/>
+        <property name="csvVrednostVsebina" value="${si.vsrs.cif.pametnekartice.csv.vsebina.vred}"/>
+        <property name="csvVrednostKartica" value="${si.vsrs.cif.pametnekartice.csv.vrednost.kartica}"/>
+        <property name="csvVrednostCertifikat" value="${si.vsrs.cif.pametnekartice.csv.vrednost.certifikat}"/>
+        <property name="csvVrednostCertifikatEncoding" value="${si.vsrs.cif.pametnekartice.csv.vrednost.certifikat.encoding}"/>
+        <property name="csvVrednostCertifikatDelimiter" value="${si.vsrs.cif.pametnekartice.csv.vrednost.certifikat.delimiter}"/>
+        <property name="csvVrednostCertifikatObstj" value="${si.vsrs.cif.pametnekartice.csv.vrednost.certifikatObstj}"/>
+        <property name="csvVrednostKarticaObstj" value="${si.vsrs.cif.pametnekartice.csv.vrednost.karticaObstj}"/>
+        <property name="csvIzvozEncoding" value="${si.vsrs.cif.pametnekartice.csv.izvoz.encoding}"/>
+        <property name="prikazovNaStran" value="${si.vsrs.cif.pametnekartice.pregled.stran.velikost}"/>        
+        <property name="karticaPackage" value="${si.vsrs.cif.pametnekartice.csv.vrednost.kartica.package}"/>
+        <property name="certifikatPackage" value="${si.vsrs.cif.pametnekartice.csv.vrednost.certifikat.package}"/>
+        <property name="karticaObstjPackage" value="${si.vsrs.cif.pametnekartice.csv.vrednost.karticaObstj.package}"/>
+        <property name="serverURL" value="${si.vsrs.cif.pametnekartice.generatereport.serverurl}"/>
+        <property name="obrazciURL">
+            <map value-type="java.lang.String">
+                <entry key="ZAHTEVEK1IN2" value="${si.vsrs.cif.pametnekartice.generatereport.obrazec.ZAHTEVEK1IN2}"/>
+                <entry key="ZAHTEVEK3" value="${si.vsrs.cif.pametnekartice.generatereport.obrazec.ZAHTEVEK3}"/>
+                <entry key="POTRDILOOPREJEMU" value="${si.vsrs.cif.pametnekartice.generatereport.obrazec.POTRDILOOPREJEMU}"/>
+                <entry key="KODAZAODKLEPANJE" value="${si.vsrs.cif.pametnekartice.generatereport.obrazec.KODAZAODKLEPANJE}"/>
+                <entry key="PREKLICCERTIFIKATA" value="${si.vsrs.cif.pametnekartice.generatereport.obrazec.PREKLICCERTIFIKATA}"/>
+                <entry key="PRENOSCERTIFIKATA" value="${si.vsrs.cif.pametnekartice.generatereport.obrazec.PRENOSCERTIFIKATA}"/>
+            </map>
+        </property>   
+        <property name="kontrolaCasDoPotekaCertifikata" value="${si.vsrs.cif.pametnekartice.generatereport.kontrola.cas_do_poteka_certifikata}"/>
+        <property name="okolje" value="${si.vsrs.cif.pametnekartice.okolje}"/>
+        <property name="verzija" value="1.17.5"/>       
+        <property name="csvVrednostCitalecObstj" value="${si.vsrs.cif.pametnekartice.csv.vrednost.citalecObstj}"/>
+        <property name="citalecObstjPackage" value="${si.vsrs.cif.pametnekartice.csv.vrednost.citalecObstj.package}"/>
+        <property name="csvKarticaVrednostGlava" value="${si.vsrs.cif.pametnekartice.csvKartica.glava.vred}"/>
+        <property name="csvKarticaVrednostVsebina" value="${si.vsrs.cif.pametnekartice.csvKartica.vsebina.vred}"/>
+        <property name="certificateUpdateCRL" value="${si.vsrs.cif.pametnekartice.certificate.update.crl.url}"/>
+         <property name="navodila" value="${si.vsrs.cif.pametnekartice.navodila.za.uporabo}"/>
+           <property name="jobExecutionTime" value="${si.vsrs.cif.pametnekartice.certifikat.update.job.execution.time}"/>
+         
+        
+    </bean>
+  
+    <bean id="metodeHelper" class="si.vsrs.cif.helper.MetodeHelper"/>
+   
+    <!--
+    <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
+        <property name="caches">
+            <set>
+                <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean" p:name="sodisca"/>
+            </set>
+        </property>
+    </bean>
+ 
+     <cache:annotation-driven cache-manager="cacheManager" />
+    -->
+   
+     <bean id="contextSource" class="org.springframework.ldap.core.support.LdapContextSource">
+        <property name="url" value="${si.vsrs.cif.pametnekartice.security.ldap-server.url}" />
+        <property name="base" value="${si.vsrs.cif.pametnekartice.security.ldap-authentication-provider.user-search-base}" />
+    </bean>
+
+    <bean id="ldapTemplate" class="org.springframework.ldap.core.LdapTemplate">
+        <constructor-arg ref="contextSource" />
+    </bean>
+
+
+</beans>
+
+
+

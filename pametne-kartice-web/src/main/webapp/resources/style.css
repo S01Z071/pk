@@ -1,0 +1,250 @@
+/* 
+    Document   : style
+    Created on : 13.8.2013, 9:27:46
+    Author     : uporabnik
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+#header{
+    /*width:100%;
+    height:10%;*/
+    text-align: center;
+}
+
+#menu1{
+    width:200px;
+    height:80%;
+    border-style: solid;
+    border-width: 1px;
+    float:left;
+    min-height: 200px;
+}
+
+#body1{
+    margin-left:210px;
+    border-style: solid;
+    border-width: 1px;
+    height:80%;
+    min-height: 200px;
+    text-align:center;
+
+}
+
+#footer{
+    width:100%;
+    height:10%;
+    text-align: center;
+}
+
+
+input1{
+    width:100%;
+}
+
+input1[type="submit"]{
+    width:15%;
+}
+
+.error{
+    color: #FF0000;
+    display:inline-block;
+    z-index: 9999;
+}
+
+
+
+.success{
+    color: #308e23;
+    display:inline-block;
+}
+
+
+.errorBorder{
+    border-color: red !important;
+}
+
+.error1{
+    color: #FF0000;
+    font-size: 10px; 
+}
+.errorSize{
+    width:170px;
+
+}
+
+.info{
+    color: #2f96b4;
+    font-size: 10px;
+}
+
+.errorLogin{
+    color: #FF0000;
+}
+
+.container1{
+    padding-left:10%;
+}
+
+#iskanjeRez{
+    position:absolute; 
+    z-index:999;
+}
+
+#iskanjeRez ul{
+    list-style-type: none;
+    width:200px;
+    padding-left:5px;
+}
+#iskanjeRez li{
+    width:230px;
+    text-align:left;
+    margin-bottom:1px;
+    opacity: 0.6;
+}
+
+
+::-webkit-file-upload-button {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    border: 1px solid #cccccc;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+
+::-webkit-file-upload-button {
+
+}
+
+.imgHover:hover{
+    width:17px;
+    height:18px;
+    position:absolute;     
+}
+
+
+
+.menuIzbrano{
+    background-color:blue;
+    border-radius:20px;
+}
+
+
+.slikaNavodila{
+    margin-right:10px;
+    /* text-align:center;*/
+    border-style: solid;
+    border-width: 1px;
+    width:150px;
+    height:150px;
+}
+
+.slikaNavodilaNapis{
+    margin-right:10px;
+    text-align:center;
+    width:150px;
+    height:10px;
+}
+
+.slikaThumb{
+    /*width:150px;
+    height:150px;*/
+}
+
+
+.inputBlur{
+    /*opacity:0.8;*/
+    cursor: not-allowed;
+}
+
+
+.tabela td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+    width:140px;
+}
+
+
+.tableZgodovinaImetnik tr td:nth-of-type(1){
+    font-weight:bold;
+    text-align:left;
+}
+.tableZgodovinaImetnik tr td:nth-of-type(n+2){
+    text-align:left;
+    padding-left:100px;
+}
+
+
+
+.tableZgodovinaKartica td:nth-of-type(n+2){
+    text-align:center;
+     background-color:gainsboro;
+}
+
+.tableZgodovinaKarticaTitle td:nth-of-type(n+2){
+    
+     background-color:ghostwhite;
+}
+
+/*.trZgodovinaImetnik{
+    background-color:gray;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.trZgodovinaTitle{
+   background-color:gainsboro;
+   font-weight:bold;
+}
+
+.trZgodovinaSubTitle td:nth-of-type(1){
+     background-color:ghostwhite;
+    font-weight: bold;  
+    color:#6600FF;
+}
+.trZgodovinaSubTitle td:nth-of-type(n+2){
+     background-color:ghostwhite;
+    font-weight: bold;  
+}*/
+
+
+
+/*.trZgodovinaSub2Title td:nth-of-type(2){
+    background-color:ghostwhite;
+    font-weight: bold;
+      color:#6600FF;
+}
+
+.trZgodovinaSub2Title td:nth-of-type(n+2){
+    background-color:ghostwhite;
+    font-weight: bold;
+}*/

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: si.vsrs.cif.job.JobProcessorTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 sec - in si.vsrs.cif.job.JobProcessorTest
